@@ -1,11 +1,13 @@
 import "./index.css";
-import Note from "./components/Note";
+import Notes from "./components/Notes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
+    <>
+      <div className="App">
+        <Notes />
+      </div>
+    </>
   );
 }
 

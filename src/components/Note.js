@@ -1,15 +1,18 @@
-import Card from "react-bootstrap/Card";
+import "./Note.css";
 
 function Note(props) {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.text}</Card.Text>
-        <Card.Link href="#">Edit</Card.Link>
-        <Card.Link href="#">Delete</Card.Link>
-      </Card.Body>
-    </Card>
+    <div className="note">
+      <div
+        style={{ minHeight: "13rem", padding: "auto", alignContent: "center" }}
+      >
+        <div style={{ fontSize: "40px", fontWeight: "bold" }}>
+          {props.title}
+        </div>
+        <div>{props.text}</div>
+      </div>
+      <button className="button">Edit</button>
+    </div>
   );
 }
 
