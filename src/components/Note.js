@@ -1,4 +1,4 @@
-import "./Note.css";
+import "./styles.css";
 
 function Note(props) {
   return (
