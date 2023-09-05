@@ -1,7 +1,7 @@
 import "../index.css";
 import Note from "./Note";
 import { uuid } from "uuidv4";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import EditNote from "./EditNote";
 
 function Notes() {
@@ -22,6 +22,21 @@ function Notes() {
       text: "World",
     },
   ]);
+
+  // const [notes, setNotes] = useState();
+
+  // useEffect(() =>
+  //   fetch("http://127.0.0.1:8000/api/notes/").then((response) =>
+  //     response.json().then((data) => setNotes(data))
+  //   )
+  // );
+
+  function editNotes(id, newTitle, newText) {
+    const updatedNotes = notes.map((note) => {
+      if (id == note.id) return { ...note, title: newTitle, text: newText };
+      return note;
+    });
+  }
 
   return (
     <>

@@ -19,15 +19,23 @@ function EditNote(props) {
               <div className="title">
                 <input
                   className="inputs"
+                  key="title"
                   type="text"
-                  value={props.title}
+                  defaultValue={title}
+                  onChange={(e) => {
+                    setTitle(e.target.defaultValue);
+                  }}
                 ></input>
               </div>
               <div className="text">
                 <textarea
+                  key="text"
                   className="inputtext"
                   type="text"
-                  value={props.text}
+                  defaultValue={text}
+                  onChange={(e) => {
+                    setText(e.target.defaultValue);
+                  }}
                 ></textarea>
               </div>
             </form>
@@ -36,7 +44,9 @@ function EditNote(props) {
             <button className="button" onClick={() => setShow(false)}>
               Cancel
             </button>
-            <button className="button-save">Save</button>
+            <button className="button-save" form="edit">
+              Save
+            </button>
           </div>
         </div>
       </div>

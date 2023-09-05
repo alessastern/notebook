@@ -11,7 +11,7 @@ function Note(props) {
         <div>{props.text}</div>
       </div>
       <div style={{ display: "flex", justifyContent: "left", margin: "1rem" }}>
-        <EditNote title={props.title} text={props.text} /> <EditNote />
+        <EditNote title={props.title} text={props.text} />
       </div>
     </div>
   );
