@@ -1,0 +1,64 @@
+.note {
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  width: 30%;
+  min-height: 16rem;
+  box-shadow: 5px 5px 5px silver;
+  border-radius: 10px;
+  border: 2px solid pink;
+}
+
+.note:hover {
+  background-color: rgb(255, 244, 246);
+}
+
+.button {
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  border: 2px solid lightpink;
+}
+.button-save {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  background-color: pink;
+  border: 2px solid hotpink;
+}
+.button-save:hover {
+  background-color: palevioletred;
+}
+
+.button:hover {
+  background-color: lightpink;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-body {
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid pink;
+  width: 30%;
+  top: 30%;
+  margin: auto;
+  display: block;
+  justify-content: center;
+  background-color: white;
+  padding: 1rem;
+}
+
+.footer {
+  padding: 1rem;
+}
+
+.title {
+  padding: 1rem;
+}

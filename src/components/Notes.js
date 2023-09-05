@@ -33,7 +33,6 @@ function Notes() {
               id={note.id}
               title={note.title}
               text={note.text}
-              EditNote={EditNote}
             />
           </div>
         );
