@@ -59,6 +59,14 @@
   padding: 1rem;
 }
 
-.title {
-  padding: 1rem;
+.inputtext {
+  margin: 2px;
+  width: 80%;
+  padding: 2px;
+}
+
+.inputs {
+  width: 80%;
+  padding: 2px;
+  margin: 2px;
 }

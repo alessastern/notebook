@@ -27,7 +27,7 @@ function Notes() {
     <>
       {notes.map((note) => {
         return (
-          <div className="my-3">
+          <div style={{ margin: "1rem" }}>
             <Note
               key={note.id}
               id={note.id}
