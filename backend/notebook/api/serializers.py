@@ -7,3 +7,4 @@ class NoteSerizalizer(ModelSerializer):
     class Meta:
         model = Note
         fields = ('id', 'title', 'text')
+        read_only_fields = ('id',)

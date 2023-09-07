@@ -18,6 +18,7 @@ function EditNote(props) {
             id="edit"
             onSubmit={(e) => {
               props.updateNote(props.id, title, text);
+              window.location.reload();
             }}
           >
             <div className="">

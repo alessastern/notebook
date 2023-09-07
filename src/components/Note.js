@@ -1,10 +1,11 @@
 import "./styles.css";
 import EditNote from "./EditNote";
+import DeleteNote from "./DeleteNote";
 
 function Note(props) {
   return (
     <div className="note">
-      <div style={{ minHeight: "13rem", padding: "px", textAlign: "center" }}>
+      <div style={{ minHeight: "13rem", padding: "5px", textAlign: "center" }}>
         <div className="title">{props.title}</div>
         <div style={{ fontFamily: "'Montserrat", fontWeight: "bold" }}>
           {props.text}
@@ -15,6 +16,7 @@ function Note(props) {
           display: "flex",
           justifyContent: "left",
           margin: "1rem",
+          marginLeft: "1rem",
         }}
       >
         <EditNote
@@ -23,6 +25,7 @@ function Note(props) {
           text={props.text}
           updateNote={props.updateNote}
         />
+        <DeleteNote id={props.id} deleteNote={props.deleteNote} />
       </div>
     </div>
   );

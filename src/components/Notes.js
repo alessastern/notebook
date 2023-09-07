@@ -26,6 +26,13 @@ function Notes() {
     });
   };
 
+  const deleteNote = (id) => {
+    fetch(`http://127.0.0.1:8000/api/notes/${id}/`, {
+      method: "DELETE",
+      headers: {},
+    });
+  };
+
   return (
     <div>
       <>
@@ -38,6 +45,7 @@ function Notes() {
                   title={note.title}
                   text={note.text}
                   updateNote={updateNote}
+                  deleteNote={deleteNote}
                 />
               );
             })
