@@ -1,23 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap");
+
 .note {
   margin: auto;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 227, 223);
   width: 30%;
   min-height: 16rem;
-  box-shadow: 5px 5px 5px silver;
+  box-shadow: 5px 5px 5px rgb(99, 98, 98);
   border-radius: 10px;
   border: 2px solid pink;
 }
 
 .note:hover {
-  background-color: rgb(255, 244, 246);
+  background-color: rgb(250, 205, 212);
+  transition: 0.2s;
 }
 
 .button {
-  background-color: white;
+  background-color: rosybrown;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  border: 2px solid lightpink;
+  border: 2px solid rgb(116, 91, 91);
 }
 .button-save {
   padding-left: 10px;
@@ -31,7 +34,9 @@
 }
 
 .button:hover {
-  background-color: lightpink;
+  border-color: antiquewhite;
+  transition: 0.2s;
+  color: antiquewhite;
 }
 
 .modal-background {

@@ -1,58 +1,52 @@
 import "../index.css";
 import Note from "./Note";
-import { uuid } from "uuidv4";
 import { useState, useEffect } from "react";
-import EditNote from "./EditNote";
 
 function Notes() {
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      title: "Hello",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    },
-    {
-      id: 2,
-      title: "Hello",
-      text: "World",
-    },
-    {
-      id: 3,
-      title: "Hello",
-      text: "World",
-    },
-  ]);
+  const [notes, setNotes] = useState();
 
-  // const [notes, setNotes] = useState();
+  useEffect(() => getNotes(), []);
 
-  // useEffect(() =>
-  //   fetch("http://127.0.0.1:8000/api/notes/").then((response) =>
-  //     response.json().then((data) => setNotes(data))
-  //   )
-  // );
+  const getNotes = () => {
+    fetch("http://127.0.0.1:8000/api/notes/").then((response) =>
+      response.json().then((data) => setNotes(data))
+    );
+  };
 
-  function editNotes(id, newTitle, newText) {
-    const updatedNotes = notes.map((note) => {
-      if (id == note.id) return { ...note, title: newTitle, text: newText };
-      return note;
+  const updateNote = (id, title, text) => {
+    let obj = {};
+    obj.title = title;
+    obj.text = text;
+    console.log(obj);
+    fetch(`http://127.0.0.1:8000/api/notes/${id}/`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
     });
-  }
+  };
 
   return (
-    <>
-      {notes.map((note) => {
-        return (
-          <div style={{ margin: "1rem" }}>
-            <Note
-              key={note.id}
-              id={note.id}
-              title={note.title}
-              text={note.text}
-            />
-          </div>
-        );
-      })}
-    </>
+    <div>
+      <>
+        <div style={{ margin: "1rem" }}>
+          {notes
+            ? notes.map((note) => {
+                return (
+                  <Note
+                    key={note.id}
+                    id={note.id}
+                    title={note.title}
+                    text={note.text}
+                    updateNote={updateNote}
+                  />
+                );
+              })
+            : null}
+        </div>
+      </>
+    </div>
   );
 }
 
