@@ -33,6 +33,7 @@
 .button-save:hover {
   border-color: antiquewhite;
   color: antiquewhite;
+  transition: 0.2s;
 }
 
 .button:hover {
@@ -53,7 +54,7 @@
   text-align: center;
   border-radius: 10px;
   border: 2px solid pink;
-  width: 30%;
+  width: 40%;
   top: 30%;
   margin: auto;
   display: block;

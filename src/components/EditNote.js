@@ -4,21 +4,19 @@ import React from "react";
 
 function EditNote(props) {
   const [show, setShow] = useState(false);
-  const [title, setTitle] = useState(props.title);
-  const [text, setText] = useState(props.text);
 
-  function Modal() {
+  function Modal(props) {
+    const [title, setTitle] = useState(props.title);
+    const [text, setText] = useState(props.text);
     return (
       <div className="modal-background">
         <div className="modal-body">
           <div className="title">
             <h2>Edit your note</h2>
           </div>
-
           <form
             id="edit"
             onSubmit={(e) => {
-              e.preventDefault();
               props.updateNote(props.id, title, text);
             }}
           >
@@ -43,7 +41,6 @@ function EditNote(props) {
               ></textarea>
             </div>
           </form>
-
           <div className="footer">
             <button className="button" onClick={() => setShow(false)}>
               Cancel
@@ -56,6 +53,7 @@ function EditNote(props) {
       </div>
     );
   }
+
   return (
     <div>
       <button className="button" onClick={() => setShow(true)}>
@@ -63,7 +61,12 @@ function EditNote(props) {
       </button>
       {show ? (
         <>
-          <Modal />
+          <Modal
+            id={props.id}
+            title={props.title}
+            text={props.text}
+            updateNote={props.updateNote}
+          />
         </>
       ) : null}
     </div>

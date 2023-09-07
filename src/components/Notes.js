@@ -29,21 +29,19 @@ function Notes() {
   return (
     <div>
       <>
-        <div style={{ margin: "1rem" }}>
-          {notes
-            ? notes.map((note) => {
-                return (
-                  <Note
-                    key={note.id}
-                    id={note.id}
-                    title={note.title}
-                    text={note.text}
-                    updateNote={updateNote}
-                  />
-                );
-              })
-            : null}
-        </div>
+        {notes
+          ? notes.map((note) => {
+              return (
+                <Note
+                  key={note.id}
+                  id={note.id}
+                  title={note.title}
+                  text={note.text}
+                  updateNote={updateNote}
+                />
+              );
+            })
+          : null}
       </>
     </div>
   );
