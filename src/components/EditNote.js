@@ -14,39 +14,36 @@ function EditNote(props) {
           <div className="title">
             <h2>Edit your note</h2>
           </div>
-          <div className="">
-            <form
-              id="edit"
-              className="form-styling"
-              onSubmit={(e) => {
-                e.preventDefault();
-                props.updateNote(props.id, title, text);
-              }}
-            >
-              <div className="title">
-                <input
-                  className="inputs"
-                  type="text"
-                  defaultValue={title}
-                  onChange={(e) => {
-                    e.preventDefault();
-                    setTitle(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <div className="text">
-                <textarea
-                  className="inputtext"
-                  type="text"
-                  defaultValue={text}
-                  onChange={(e) => {
-                    e.preventDefault();
-                    setText(e.target.value);
-                  }}
-                ></textarea>
-              </div>
-            </form>
-          </div>
+
+          <form
+            id="edit"
+            onSubmit={(e) => {
+              e.preventDefault();
+              props.updateNote(props.id, title, text);
+            }}
+          >
+            <div className="">
+              <input
+                className="inputs"
+                type="text"
+                defaultValue={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+              ></input>
+            </div>
+            <div className="text">
+              <textarea
+                className="inputtext"
+                type="text"
+                defaultValue={text}
+                onChange={(e) => {
+                  setText(e.target.value);
+                }}
+              ></textarea>
+            </div>
+          </form>
+
           <div className="footer">
             <button className="button" onClick={() => setShow(false)}>
               Cancel

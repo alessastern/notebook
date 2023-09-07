@@ -17,7 +17,6 @@ function Notes() {
     let obj = {};
     obj.title = title;
     obj.text = text;
-    console.log(obj);
     fetch(`http://127.0.0.1:8000/api/notes/${id}/`, {
       method: "PUT",
       headers: {
