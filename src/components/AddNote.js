@@ -17,6 +17,7 @@ function AddNote(props) {
             <form
               id="add"
               onSubmit={(e) => {
+                e.preventDefault();
                 setTitle("");
                 setText("");
                 props.addNote(title, text);

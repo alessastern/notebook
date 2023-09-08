@@ -17,6 +17,7 @@ function EditNote(props) {
           <form
             id="edit"
             onSubmit={(e) => {
+              e.preventDefault();
               props.updateNote(props.id, title, text);
               window.location.reload();
             }}

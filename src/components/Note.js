@@ -7,7 +7,13 @@ function Note(props) {
     <div className="note">
       <div style={{ minHeight: "13rem", padding: "5px", textAlign: "center" }}>
         <div className="title">{props.title}</div>
-        <div style={{ fontFamily: "'Montserrat", fontWeight: "bold" }}>
+        <div
+          style={{
+            fontFamily: "'Montserrat",
+            fontWeight: "bold",
+            margin: "2rem",
+          }}
+        >
           {props.text}
         </div>
       </div>

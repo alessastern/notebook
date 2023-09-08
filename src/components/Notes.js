@@ -1,6 +1,7 @@
 import "../index.css";
 import Note from "./Note";
 import { useState, useEffect } from "react";
+import AddNote from "./AddNote";
 
 function Notes() {
   const [notes, setNotes] = useState();
@@ -33,8 +34,22 @@ function Notes() {
     });
   };
 
+  const addNote = (title, text) => {
+    let obj = {};
+    obj.title = title;
+    obj.text = text;
+    fetch("http://127.0.0.1:8000/api/notes/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    });
+  };
+
   return (
     <div>
+      <AddNote addNote={addNote} />
       <>
         {notes
           ? notes.map((note) => {
