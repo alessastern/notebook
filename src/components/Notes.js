@@ -6,7 +6,9 @@ import AddNote from "./AddNote";
 function Notes() {
   const [notes, setNotes] = useState();
 
-  useEffect(() => getNotes(), []);
+  useEffect(() => {
+    getNotes();
+  }, []);
 
   const getNotes = () => {
     fetch("http://127.0.0.1:8000/api/notes/").then((response) =>
@@ -59,6 +61,7 @@ function Notes() {
                   id={note.id}
                   title={note.title}
                   text={note.text}
+                  created_at={note.created_at}
                   updateNote={updateNote}
                   deleteNote={deleteNote}
                 />

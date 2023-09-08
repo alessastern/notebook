@@ -25,13 +25,16 @@ function Note(props) {
           marginLeft: "1rem",
         }}
       >
-        <EditNote
-          id={props.id}
-          title={props.title}
-          text={props.text}
-          updateNote={props.updateNote}
-        />
-        <DeleteNote id={props.id} deleteNote={props.deleteNote} />
+        <>
+          <EditNote
+            id={props.id}
+            title={props.title}
+            text={props.text}
+            updateNote={props.updateNote}
+          />
+          <DeleteNote id={props.id} deleteNote={props.deleteNote} />
+          {props.created_at}
+        </>
       </div>
     </div>
   );
