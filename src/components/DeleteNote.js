@@ -7,11 +7,11 @@ function DeleteNote(props) {
   function Modal(props) {
     return (
       <div className="modal-background">
-        <div className="modal-body">
+        <div className="modalbody">
           <div className="title">
             <h2>Are you sure?</h2>
           </div>
-          <div className="footer">
+          <div className="modalfooter">
             <button className="button" onClick={() => setShow(false)}>
               Cancel
             </button>

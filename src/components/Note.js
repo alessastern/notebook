@@ -5,13 +5,14 @@ import DeleteNote from "./DeleteNote";
 function Note(props) {
   return (
     <div className="note">
-      <div style={{ minHeight: "13rem", padding: "5px", textAlign: "center" }}>
+      <div style={{ minHeight: "13rem", padding: "5px" }}>
         <div className="title">{props.title}</div>
         <div
           style={{
             fontFamily: "'Montserrat",
             fontWeight: "bold",
             margin: "2rem",
+            whiteSpace: "pre-wrap",
           }}
         >
           {props.text}
@@ -32,9 +33,19 @@ function Note(props) {
             text={props.text}
             updateNote={props.updateNote}
           />
-          <DeleteNote id={props.id} deleteNote={props.deleteNote} />
-          {props.created_at}
+          <div style={{ marginLeft: "3px" }}>
+            <DeleteNote id={props.id} deleteNote={props.deleteNote} />
+          </div>
         </>
+        <div
+          style={{
+            marginLeft: "auto",
+            marginRight: "0",
+            color: "rosybrown",
+          }}
+        >
+          {props.updated_at}
+        </div>
       </div>
     </div>
   );

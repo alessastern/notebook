@@ -10,7 +10,7 @@ function EditNote(props) {
     const [text, setText] = useState(props.text);
     return (
       <div className="modal-background">
-        <div className="modal-body">
+        <div className="modalbody">
           <div className="title">
             <h2>Edit your note</h2>
           </div>
@@ -43,7 +43,7 @@ function EditNote(props) {
               ></textarea>
             </div>
           </form>
-          <div className="footer">
+          <div className="modalfooter">
             <button className="button" onClick={() => setShow(false)}>
               Cancel
             </button>

@@ -9,7 +9,7 @@ function AddNote(props) {
     const [text, setText] = useState("");
     return (
       <div className="modal-background">
-        <div className="modal-body">
+        <div className="modalbody">
           <div className="title">
             <h2>Add a note</h2>
           </div>
@@ -48,7 +48,7 @@ function AddNote(props) {
               </div>
             </form>
           </div>
-          <div className="footer">
+          <div className="modalfooter">
             <button className="button" onClick={() => setShow(false)}>
               Cancel
             </button>

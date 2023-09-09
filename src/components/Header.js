@@ -1,9 +1,5 @@
-export default function Header(props) {
+export default function Header() {
   return (
-    <>
-      <div class="bg-gray-300">
-        <div className="mx-auto min-h-screen px-4 py-3 ">{props.children}</div>
-      </div>
-    </>
+
   );
 }

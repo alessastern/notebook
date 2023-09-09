@@ -61,7 +61,7 @@ function Notes() {
                   id={note.id}
                   title={note.title}
                   text={note.text}
-                  created_at={note.created_at}
+                  updated_at={note.updated_at}
                   updateNote={updateNote}
                   deleteNote={deleteNote}
                 />

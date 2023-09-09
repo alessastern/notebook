@@ -25,6 +25,7 @@
   border: 2px solid rgb(116, 91, 91);
 }
 .button-save {
+  margin-left: 3px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
@@ -51,7 +52,9 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 }
-.modal-body {
+
+.modalbody {
+  position: relative;
   text-align: center;
   border-radius: 10px;
   border: 2px solid pink;
@@ -60,12 +63,22 @@
   margin: auto;
   display: block;
   justify-content: center;
-  background-color: white;
+  background-color: rgb(255, 227, 223);
   padding: 1rem;
 }
 
-.footer {
-  padding: 1rem;
+.modalfooter {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.footers {
+  text-align: center;
+  margin-top: 2rem;
+  height: 2rem;
+  background-color: rgb(150, 105, 105);
+  color: rgb(71, 56, 56);
 }
 
 .inputtext {
@@ -84,7 +97,9 @@
   padding: 2px;
   margin: 2px;
 }
+
 .title {
+  text-align: center;
   margin-top: 2px;
   font-weight: bold;
   font-size: 30px;
