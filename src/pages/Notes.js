@@ -1,7 +1,8 @@
 import "../index.css";
-import Note from "./Note";
+import Note from "../components/Note";
 import { useState, useEffect } from "react";
-import AddNote from "./AddNote";
+import AddNote from "../components/AddNote";
+import Footer from "../components/Footer";
 
 function Notes() {
   const [notes, setNotes] = useState();
@@ -69,6 +70,7 @@ function Notes() {
             })
           : null}
       </>
+      <Footer />
     </div>
   );
 }
