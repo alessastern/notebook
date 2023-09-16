@@ -44,7 +44,9 @@ function Note(props) {
             color: "rosybrown",
           }}
         >
-          {props.updated_at}
+          {props.updated_at === props.created_at
+            ? `created ${props.updated_at}`
+            : `updated ${props.created_at}`}
         </div>
       </div>
     </div>

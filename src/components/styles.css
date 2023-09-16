@@ -74,14 +74,14 @@
 }
 
 .headers {
-  display: flex;
-  justify-content: center;
+  width: 100%;
   border-bottom: 1rem solid rgb(184, 130, 130);
   height: 4rem;
   background-color: rgb(150, 105, 105);
   color: antiquewhite;
   font-size: 20px;
   padding-top: 1rem;
+  padding-right: 1rem;
   padding-left: 1rem;
 }
 
