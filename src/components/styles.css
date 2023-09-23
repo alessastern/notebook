@@ -74,8 +74,10 @@
 }
 
 .headers {
+  position: fixed;
+  top: 0;
   width: 100%;
-  border-bottom: 1rem solid rgb(184, 130, 130);
+  border-bottom: 0.5rem solid rgb(184, 130, 130);
   height: 4rem;
   background-color: rgb(150, 105, 105);
   color: antiquewhite;
@@ -94,7 +96,7 @@
 }
 
 .inputtext {
-  background-color: rgb(255, 237, 234);
+  background-color: rgb(255, 232, 232);
   border-radius: 10px;
   margin: 2px;
   width: 80%;
@@ -103,7 +105,7 @@
 }
 
 .inputs {
-  background-color: rgb(255, 237, 234);
+  background-color: rgb(255, 232, 232);
   border-radius: 9px;
   width: 80%;
   padding: 5px;
@@ -140,4 +142,58 @@
   border-color: antiquewhite;
   transition: 0.2s;
   color: antiquewhite;
+}
+
+.dropdown1 {
+  margin-left: auto;
+  margin-right: 10rem;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown1:hover .droprowncontent {
+  display: block;
+}
+.droprowncontent {
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  background-color: rosybrown;
+  padding: 0.5rem;
+  width: 150px;
+  overflow: auto;
+  z-index: 1;
+  box-shadow: 5px 5px 5px rgb(99, 98, 98);
+}
+.loginButton {
+  border-radius: 20px;
+  border: 2px solid rgba(255, 227, 223, 0.3);
+  font-size: 20px;
+  background-color: rosybrown;
+  color: rgb(255, 227, 223);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+
+.nav {
+  margin-left: 20%;
+  text-decoration: none;
+  color: rgb(255, 227, 223);
+}
+
+.nav:hover {
+  font-weight: bold;
+  transition: 5ms;
+}
+
+.loginsignup {
+  width: 30%;
+  top: 30%;
+  margin: auto;
+  padding-top: 10rem;
+  display: block;
+  justify-content: center;
 }
