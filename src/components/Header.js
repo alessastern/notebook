@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 
 function Header() {
-  const { user } = useContext(AuthContext);
+  const { user, logoutUser } = useContext(AuthContext);
 
   return (
     <div className="headers">
@@ -68,9 +68,7 @@ function Header() {
           <div className="droprowncontent">
             {user ? (
               <div>
-                <Link //onClick= {logout}
-                  className="nav"
-                >
+                <Link className="nav" onClick={logoutUser}>
                   logout
                 </Link>
               </div>

@@ -4,6 +4,7 @@ import AuthContext from "../context/AuthContext";
 
 function PrivateRoute({ children, ...rest }) {
   let { user } = useContext(AuthContext);
+
   return user ? <Outlet /> : <Navigate to="/login" />;
 }
 

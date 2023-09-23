@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
 import HomePage from "./pages/HomePage";
 import PrivateRoute from "./utils/PrivateRoute";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+        <Footer />
       </AuthProvider>
     </BrowserRouter>
   );
