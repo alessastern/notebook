@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import "../components/styles.css";
 import AuthContext from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function Login() {
   const { loginUser } = useContext(AuthContext);
@@ -8,6 +9,7 @@ function Login() {
   return (
     <div className="pagecontainer">
       <div className="loginsignup">
+        <p className="title">log in</p>
         <form id="login" onSubmit={loginUser}>
           <input
             name="username"
@@ -32,6 +34,33 @@ function Login() {
           >
             Log in
           </button>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            marginTop: "10px",
+            justifyContent: "center",
+          }}
+        >
+          <p
+            className="plaintext"
+            style={{
+              textAlign: "center",
+            }}
+          >
+            don't have an account yet?
+          </p>
+          <Link
+            key="signup"
+            to="/registration"
+            className="nav"
+            style={{
+              marginLeft: "5%",
+              fontWeight: "bold",
+            }}
+          >
+            signup
+          </Link>
         </div>
       </div>
     </div>

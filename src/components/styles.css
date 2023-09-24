@@ -6,6 +6,8 @@
   --light: rgb(255, 227, 223);
   --transitions: rgb(250, 205, 212);
   --contour: rgb(116, 91, 91);
+  --alert: red;
+  --shadows: rgb(99, 98, 98);
 }
 
 .pagecontainer {
@@ -20,7 +22,7 @@
   width: 40%;
   overflow-wrap: break-word;
   min-height: 16rem;
-  box-shadow: 5px 5px 5px rgb(99, 98, 98);
+  box-shadow: 5px 5px 5px var(--shadows);
   border-radius: 10px;
   border: 2px solid var(--medium);
 }
@@ -42,7 +44,7 @@
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  background-color: var(--medium);
+  background-color: var(--dark);
   border: 2px solid var(--contour);
 }
 .button-save:hover {
@@ -93,10 +95,11 @@
   border-bottom: 0.5rem solid var(--dark);
   background-color: var(--dark);
   color: var(--light);
-  font-size: 20px;
+  font-size: 18px;
   padding-top: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
+  font-family: "Montserrat";
 }
 
 .footers {
@@ -107,6 +110,8 @@
   height: 2rem;
   background-color: var(--dark);
   color: rgb(71, 56, 56);
+  font-family: "Montserrat";
+  font-weight: bold;
 }
 
 .inputtext {
@@ -140,10 +145,6 @@
   font-weight: bold;
   font-size: 30px;
   font-family: "Montserrat";
-}
-
-.modalbody {
-  background-color: var(--light);
 }
 
 .addButtonDiv {
@@ -185,7 +186,7 @@
   width: 150px;
   overflow: auto;
   z-index: 1;
-  box-shadow: 5px 5px 5px rgb(99, 98, 98);
+  box-shadow: 5px 5px 5px var(--shadows);
 }
 .loginButton {
   border-radius: 20px;
@@ -195,20 +196,23 @@
   color: var(--light);
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   cursor: pointer;
 }
 
 .nav {
+  font-family: "Montserrat";
+  font-size: 20px;
   margin-left: 20%;
   text-decoration: none;
   color: var(--light);
 }
 
 .nav:hover {
-  font-weight: bold;
+  color: var(--contour);
   transition: 5ms;
+  font-weight: bolder;
 }
 
 .loginsignup {
@@ -218,4 +222,24 @@
   padding-top: 10rem;
   display: block;
   justify-content: center;
+}
+
+.plaintext {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.errormessage {
+  position: relative;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--alert);
+  background-color: var(--transitions);
+  text-align: center;
+  border-radius: 10px;
+  width: 50%;
 }

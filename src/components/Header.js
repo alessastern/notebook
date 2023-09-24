@@ -18,9 +18,9 @@ function Header() {
                 ? {
                     fontWeight: "bold",
                     textDecoration: "none",
-                    color: "rgb(255, 227, 223)",
+                    color: "var(--light)",
                   }
-                : { textDecoration: "none", color: "rgb(255, 227, 223)" }
+                : { textDecoration: "none", color: "var(--light)" }
             }
           >
             home
@@ -35,9 +35,9 @@ function Header() {
                 ? {
                     fontWeight: "bold",
                     textDecoration: "none",
-                    color: "rgb(255, 227, 223)",
+                    color: "var(--light)",
                   }
-                : { textDecoration: "none", color: "rgb(255, 227, 223)" }
+                : { textDecoration: "none", color: "var(--light)" }
             }
           >
             notes
@@ -52,9 +52,9 @@ function Header() {
                 ? {
                     fontWeight: "bold",
                     textDecoration: "none",
-                    color: "rgb(255, 227, 223)",
+                    color: "var(--light)",
                   }
-                : { textDecoration: "none", color: "rgb(255, 227, 223)" }
+                : { textDecoration: "none", color: "var(--light)" }
             }
           >
             images

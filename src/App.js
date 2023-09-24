@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import HomePage from "./pages/HomePage";
 import PrivateRoute from "./utils/PrivateRoute";
 import Footer from "./components/Footer";
+import Registration from "./pages/Registration";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           </Route>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
         </Routes>
         <Footer />
       </AuthProvider>

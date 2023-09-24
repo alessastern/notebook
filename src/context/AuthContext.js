@@ -22,6 +22,28 @@ export const AuthProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
+  const signupUser = (e) => {
+    e.preventDefault();
+    console.log(e.target[0].value, e.target[1].value);
+    fetch("http://127.0.0.1:8000/api/auth/users/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: e.target[0].value,
+        password: e.target[1].value,
+      }),
+    })
+      .then((response) => {
+        if (response.status === 201) loginUser(e);
+        else if (response.status === 400)
+          throw new Error("either password or username are invalid");
+        else throw new Error("something went wrong");
+      })
+      .catch((error) => alert(error));
+  };
+
   const loginUser = (e) => {
     e.preventDefault();
     fetch("http://127.0.0.1:8000/api/auth/jwt/create/", {
@@ -83,6 +105,7 @@ export const AuthProvider = ({ children }) => {
   const contextData = {
     user: user,
     authTokens: authTokens,
+    signupUser: signupUser,
     loginUser: loginUser,
     logoutUser: logoutUser,
   };

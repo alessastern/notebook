@@ -8,9 +8,8 @@ function Note(props) {
       <div style={{ minHeight: "13rem", padding: "5px" }}>
         <div className="title">{props.title}</div>
         <div
+          className="plaintext"
           style={{
-            fontFamily: "'Montserrat",
-            fontWeight: "bold",
             margin: "2rem",
             whiteSpace: "pre-wrap",
           }}
