@@ -2,7 +2,6 @@ import "../index.css";
 import Note from "../components/Note";
 import { useState, useEffect, useContext } from "react";
 import AddNote from "../components/AddNote";
-import Footer from "../components/Footer";
 import AuthContext from "../context/AuthContext";
 
 function Notes() {

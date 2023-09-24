@@ -1,52 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap");
 
+:root {
+  --dark: rgb(150, 105, 105);
+  --medium: rosybrown;
+  --light: rgb(255, 227, 223);
+  --transitions: rgb(250, 205, 212);
+  --contour: rgb(116, 91, 91);
+}
+
 .pagecontainer {
-  min-height: 100vh;
+  min-height: 85vh;
   margin-top: 5rem;
 }
 
 .note {
   margin: auto;
   margin-top: 1rem;
-  background-color: rgb(255, 227, 223);
+  background-color: var(--light);
   width: 40%;
   overflow-wrap: break-word;
   min-height: 16rem;
   box-shadow: 5px 5px 5px rgb(99, 98, 98);
   border-radius: 10px;
-  border: 2px solid pink;
+  border: 2px solid var(--medium);
 }
 
 .note:hover {
-  background-color: rgb(250, 205, 212);
+  background-color: var(--transitions);
   transition: 0.2s;
 }
 
 .button {
-  background-color: rosybrown;
+  background-color: var(--medium);
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  border: 2px solid rgb(116, 91, 91);
+  border: 2px solid var(--contour);
 }
 .button-save {
   margin-left: 3px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  background-color: pink;
-  border: 2px solid rgb(116, 91, 91);
+  background-color: var(--medium);
+  border: 2px solid var(--contour);
 }
 .button-save:hover {
-  border-color: antiquewhite;
-  color: antiquewhite;
+  border-color: var(--light);
+  color: var(--light);
   transition: 0.2s;
 }
 
 .button:hover {
-  border-color: antiquewhite;
+  border-color: var(--light);
   transition: 0.2s;
-  color: antiquewhite;
+  color: var(--light);
 }
 
 .modal-background {
@@ -62,13 +70,13 @@
   position: relative;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid pink;
+  border: 2px solid var(--medium);
   width: 30%;
   top: 30%;
   margin: auto;
   display: block;
   justify-content: center;
-  background-color: rgb(255, 227, 223);
+  background-color: var(--light);
   padding: 2px;
 }
 
@@ -82,10 +90,9 @@
   position: fixed;
   top: 0;
   width: 100%;
-  border-bottom: 0.5rem solid rgb(184, 130, 130);
-  height: 4rem;
-  background-color: rgb(150, 105, 105);
-  color: antiquewhite;
+  border-bottom: 0.5rem solid var(--dark);
+  background-color: var(--dark);
+  color: var(--light);
   font-size: 20px;
   padding-top: 1rem;
   padding-right: 1rem;
@@ -98,12 +105,12 @@
   text-align: center;
   margin-top: 2rem;
   height: 2rem;
-  background-color: rgb(150, 105, 105);
+  background-color: var(--dark);
   color: rgb(71, 56, 56);
 }
 
 .inputtext {
-  background-color: rgb(255, 232, 232);
+  background-color: var(--light);
   border-radius: 10px;
   margin: 2px;
   width: 80%;
@@ -111,12 +118,20 @@
   height: 200px;
 }
 
+.inputtext:focus {
+  background-color: var(--transitions);
+}
+
 .inputs {
-  background-color: rgb(255, 232, 232);
+  background-color: var(--light);
   border-radius: 9px;
   width: 80%;
   padding: 5px;
   margin: 2px;
+}
+
+.inputs:focus {
+  background-color: var(--transitions);
 }
 
 .title {
@@ -127,8 +142,8 @@
   font-family: "Montserrat";
 }
 
-.modal-body {
-  background-color: rgb(255, 227, 223);
+.modalbody {
+  background-color: var(--light);
 }
 
 .addButtonDiv {
@@ -139,16 +154,16 @@
 
 .addButton {
   font-size: 18px;
-  background-color: rosybrown;
+  background-color: var(--medium);
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
 }
 
 .addButton:hover {
-  border-color: antiquewhite;
+  border-color: var(--light);
   transition: 0.2s;
-  color: antiquewhite;
+  color: var(--light);
 }
 
 .dropdown1 {
@@ -165,7 +180,7 @@
   border-radius: 10px;
   display: none;
   position: absolute;
-  background-color: rosybrown;
+  background-color: var(--medium);
   padding: 0.5rem;
   width: 150px;
   overflow: auto;
@@ -174,10 +189,10 @@
 }
 .loginButton {
   border-radius: 20px;
-  border: 2px solid rgba(255, 227, 223, 0.3);
+  border: 2px solid var(--contour);
   font-size: 20px;
-  background-color: rosybrown;
-  color: rgb(255, 227, 223);
+  background-color: var(--medium);
+  color: var(--light);
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 2px;
@@ -188,7 +203,7 @@
 .nav {
   margin-left: 20%;
   text-decoration: none;
-  color: rgb(255, 227, 223);
+  color: var(--light);
 }
 
 .nav:hover {

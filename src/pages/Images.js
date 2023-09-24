@@ -1,7 +1,7 @@
-function Images(props) {
+function Images() {
   return (
     <div className="pagecontainer">
-      <h1>under construction</h1>
+      <h1 style={{ textAlign: "center" }}>under construction</h1>
     </div>
   );
 }

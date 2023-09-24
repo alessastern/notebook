@@ -41,7 +41,7 @@ function Note(props) {
           style={{
             marginLeft: "auto",
             marginRight: "0",
-            color: "rosybrown",
+            color: "var(--medium)",
           }}
         >
           {props.updated_at === props.created_at
