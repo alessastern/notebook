@@ -29,14 +29,24 @@ const HomePage = () => {
               }}
             >
               please,
-              <div style={{ marginRight: "20px" }}>
-                <Link key="signup" to="/registration" className="nav">
+              <div>
+                <Link
+                  key="signup"
+                  to="/registration"
+                  className="nav"
+                  style={{ marginLeft: "10px", marginRight: "10px" }}
+                >
                   signup
                 </Link>
               </div>
               or
               <div>
-                <Link key="login" to="/login" className="nav">
+                <Link
+                  key="login"
+                  to="/login"
+                  className="nav"
+                  style={{ marginLeft: "10px", marginRight: "10px" }}
+                >
                   login
                 </Link>
               </div>

@@ -1,7 +1,12 @@
 function Images() {
   return (
     <div className="pagecontainer">
-      <h1 style={{ textAlign: "center" }}>under construction</h1>
+      <h1
+        className="plaintext"
+        style={{ fontSize: "50px", textAlign: "center" }}
+      >
+        under construction
+      </h1>
     </div>
   );
 }

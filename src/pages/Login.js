@@ -35,33 +35,18 @@ function Login() {
             Log in
           </button>
         </div>
-        <div
-          style={{
-            display: "flex",
-            marginTop: "10px",
-            justifyContent: "center",
-          }}
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <p className="plaintext">don't have an account yet? </p>
+
+        <Link
+          key="signup"
+          to="/registration"
+          className="nav"
+          style={{ marginLeft: "5px" }}
         >
-          <p
-            className="plaintext"
-            style={{
-              textAlign: "center",
-            }}
-          >
-            don't have an account yet?
-          </p>
-          <Link
-            key="signup"
-            to="/registration"
-            className="nav"
-            style={{
-              marginLeft: "5%",
-              fontWeight: "bold",
-            }}
-          >
-            signup
-          </Link>
-        </div>
+          signup
+        </Link>
       </div>
     </div>
   );

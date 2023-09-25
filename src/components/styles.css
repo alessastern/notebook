@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
 
 :root {
   --dark: rgb(150, 105, 105);
@@ -38,14 +38,16 @@
   padding-right: 10px;
   border-radius: 15px;
   border: 2px solid var(--contour);
+  font-family: "Montserrat";
 }
 .button-save {
   margin-left: 3px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  background-color: var(--dark);
+  background-color: var(--medium);
   border: 2px solid var(--contour);
+  font-family: "Montserrat";
 }
 .button-save:hover {
   border-color: var(--light);
@@ -83,7 +85,7 @@
 }
 
 .modalfooter {
-  padding: 2px;
+  padding: 5px;
   display: flex;
   justify-content: center;
 }
@@ -111,7 +113,6 @@
   background-color: var(--dark);
   color: rgb(71, 56, 56);
   font-family: "Montserrat";
-  font-weight: bold;
 }
 
 .inputtext {
@@ -159,6 +160,7 @@
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
+  font-family: "Montserrat";
 }
 
 .addButton:hover {
@@ -182,7 +184,7 @@
   display: none;
   position: absolute;
   background-color: var(--medium);
-  padding: 0.5rem;
+  padding: 5px 0px 5px 35px;
   width: 150px;
   overflow: auto;
   z-index: 1;
@@ -204,15 +206,14 @@
 .nav {
   font-family: "Montserrat";
   font-size: 20px;
-  margin-left: 20%;
   text-decoration: none;
   color: var(--light);
 }
 
 .nav:hover {
+  font-weight: bolder;
   color: var(--contour);
   transition: 5ms;
-  font-weight: bolder;
 }
 
 .loginsignup {
@@ -227,7 +228,6 @@
 .plaintext {
   font-family: "Montserrat";
   font-size: 20px;
-  font-weight: bold;
 }
 
 .errormessage {
@@ -236,7 +236,6 @@
   margin-bottom: 1rem;
   font-family: "Montserrat";
   font-size: 18px;
-  font-weight: bold;
   color: var(--alert);
   background-color: var(--transitions);
   text-align: center;
