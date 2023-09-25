@@ -1,10 +1,12 @@
-import Footer from "../components/Footer";
-
-function Images(props) {
+function Images() {
   return (
-    <div style={{ height: "1080px" }}>
-      <h1>under construction</h1>
-      <Footer />
+    <div className="pagecontainer">
+      <h1
+        className="plaintext"
+        style={{ fontSize: "50px", textAlign: "center" }}
+      >
+        under construction
+      </h1>
     </div>
   );
 }

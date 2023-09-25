@@ -1,3 +1,3 @@
 .body {
-  background: linear-gradient(rosybrown, pink) fixed;
+  background: linear-gradient(var(--medium), var(--transitions)) fixed;
 }

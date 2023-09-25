@@ -1,47 +1,64 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+
+:root {
+  --dark: rgb(150, 105, 105);
+  --medium: rosybrown;
+  --light: rgb(255, 227, 223);
+  --transitions: rgb(250, 205, 212);
+  --contour: rgb(116, 91, 91);
+  --alert: red;
+  --shadows: rgb(99, 98, 98);
+}
+
+.pagecontainer {
+  min-height: 85vh;
+  margin-top: 5rem;
+}
 
 .note {
   margin: auto;
   margin-top: 1rem;
-  background-color: rgb(255, 227, 223);
+  background-color: var(--light);
   width: 40%;
   overflow-wrap: break-word;
   min-height: 16rem;
-  box-shadow: 5px 5px 5px rgb(99, 98, 98);
+  box-shadow: 5px 5px 5px var(--shadows);
   border-radius: 10px;
-  border: 2px solid pink;
+  border: 2px solid var(--medium);
 }
 
 .note:hover {
-  background-color: rgb(250, 205, 212);
+  background-color: var(--transitions);
   transition: 0.2s;
 }
 
 .button {
-  background-color: rosybrown;
+  background-color: var(--medium);
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  border: 2px solid rgb(116, 91, 91);
+  border: 2px solid var(--contour);
+  font-family: "Montserrat";
 }
 .button-save {
   margin-left: 3px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  background-color: pink;
-  border: 2px solid rgb(116, 91, 91);
+  background-color: var(--medium);
+  border: 2px solid var(--contour);
+  font-family: "Montserrat";
 }
 .button-save:hover {
-  border-color: antiquewhite;
-  color: antiquewhite;
+  border-color: var(--light);
+  color: var(--light);
   transition: 0.2s;
 }
 
 .button:hover {
-  border-color: antiquewhite;
+  border-color: var(--light);
   transition: 0.2s;
-  color: antiquewhite;
+  color: var(--light);
 }
 
 .modal-background {
@@ -57,44 +74,49 @@
   position: relative;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid pink;
+  border: 2px solid var(--medium);
   width: 30%;
   top: 30%;
   margin: auto;
   display: block;
   justify-content: center;
-  background-color: rgb(255, 227, 223);
+  background-color: var(--light);
   padding: 2px;
 }
 
 .modalfooter {
-  padding: 2px;
+  padding: 5px;
   display: flex;
   justify-content: center;
 }
 
 .headers {
+  position: fixed;
+  top: 0;
   width: 100%;
-  border-bottom: 1rem solid rgb(184, 130, 130);
-  height: 4rem;
-  background-color: rgb(150, 105, 105);
-  color: antiquewhite;
-  font-size: 20px;
+  border-bottom: 0.5rem solid var(--dark);
+  background-color: var(--dark);
+  color: var(--light);
+  font-size: 18px;
   padding-top: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
+  font-family: "Montserrat";
 }
 
 .footers {
+  width: 100%;
+  bottom: 0;
   text-align: center;
   margin-top: 2rem;
   height: 2rem;
-  background-color: rgb(150, 105, 105);
+  background-color: var(--dark);
   color: rgb(71, 56, 56);
+  font-family: "Montserrat";
 }
 
 .inputtext {
-  background-color: rgb(255, 237, 234);
+  background-color: var(--light);
   border-radius: 10px;
   margin: 2px;
   width: 80%;
@@ -102,12 +124,20 @@
   height: 200px;
 }
 
+.inputtext:focus {
+  background-color: var(--transitions);
+}
+
 .inputs {
-  background-color: rgb(255, 237, 234);
+  background-color: var(--light);
   border-radius: 9px;
   width: 80%;
   padding: 5px;
   margin: 2px;
+}
+
+.inputs:focus {
+  background-color: var(--transitions);
 }
 
 .title {
@@ -118,10 +148,6 @@
   font-family: "Montserrat";
 }
 
-.modal-body {
-  background-color: rgb(255, 227, 223);
-}
-
 .addButtonDiv {
   display: flex;
   justify-content: center;
@@ -130,14 +156,89 @@
 
 .addButton {
   font-size: 18px;
-  background-color: rosybrown;
+  background-color: var(--medium);
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
+  font-family: "Montserrat";
 }
 
 .addButton:hover {
-  border-color: antiquewhite;
+  border-color: var(--light);
   transition: 0.2s;
-  color: antiquewhite;
+  color: var(--light);
+}
+
+.dropdown1 {
+  margin-left: auto;
+  margin-right: 10rem;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown1:hover .droprowncontent {
+  display: block;
+}
+.droprowncontent {
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  background-color: var(--medium);
+  padding: 5px 0px 5px 35px;
+  width: 150px;
+  overflow: auto;
+  z-index: 1;
+  box-shadow: 5px 5px 5px var(--shadows);
+}
+.loginButton {
+  border-radius: 20px;
+  border: 2px solid var(--contour);
+  font-size: 20px;
+  background-color: var(--medium);
+  color: var(--light);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  cursor: pointer;
+}
+
+.nav {
+  font-family: "Montserrat";
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--light);
+}
+
+.nav:hover {
+  font-weight: bolder;
+  color: var(--contour);
+  transition: 5ms;
+}
+
+.loginsignup {
+  width: 30%;
+  top: 30%;
+  margin: auto;
+  padding-top: 10rem;
+  display: block;
+  justify-content: center;
+}
+
+.plaintext {
+  font-family: "Montserrat";
+  font-size: 20px;
+}
+
+.errormessage {
+  position: relative;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-family: "Montserrat";
+  font-size: 18px;
+  color: var(--alert);
+  background-color: var(--transitions);
+  text-align: center;
+  border-radius: 10px;
+  width: 50%;
 }

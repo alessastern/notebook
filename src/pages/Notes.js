@@ -1,20 +1,30 @@
 import "../index.css";
 import Note from "../components/Note";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import AddNote from "../components/AddNote";
-import Footer from "../components/Footer";
+import AuthContext from "../context/AuthContext";
 
 function Notes() {
   const [notes, setNotes] = useState();
+  const { authTokens } = useContext(AuthContext);
 
   useEffect(() => {
     getNotes();
   }, []);
 
   const getNotes = () => {
-    fetch("http://127.0.0.1:8000/api/notes/").then((response) =>
-      response.json().then((data) => setNotes(data))
-    );
+    fetch("http://127.0.0.1:8000/api/notes/", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${authTokens.access}`,
+      },
+    })
+      .then((response) => {
+        if (response.status === 200) return response.json();
+        else throw new Error("something went wrong");
+      })
+      .then((data) => setNotes(data))
+      .catch((error) => alert(error));
   };
 
   const updateNote = (id, title, text) => {
@@ -25,6 +35,7 @@ function Notes() {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${authTokens.access}`,
       },
       body: JSON.stringify(obj),
     });
@@ -33,7 +44,7 @@ function Notes() {
   const deleteNote = (id) => {
     fetch(`http://127.0.0.1:8000/api/notes/${id}/`, {
       method: "DELETE",
-      headers: {},
+      headers: { Authorization: `Bearer ${authTokens.access}` },
     });
   };
 
@@ -44,6 +55,7 @@ function Notes() {
     fetch("http://127.0.0.1:8000/api/notes/", {
       method: "POST",
       headers: {
+        Authorization: `Bearer ${authTokens.access}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(obj),
@@ -51,7 +63,7 @@ function Notes() {
   };
 
   return (
-    <div>
+    <div className="pagecontainer">
       <AddNote addNote={addNote} />
       <>
         {notes
@@ -71,7 +83,6 @@ function Notes() {
             })
           : null}
       </>
-      <Footer />
     </div>
   );
 }
