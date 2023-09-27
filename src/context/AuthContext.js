@@ -45,7 +45,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   const loginUser = (e) => {
+    const responseCheck = (response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        return response.json().then((err) => Promise.reject(err.detail));
+      }
+    };
     e.preventDefault();
+
     fetch("http://127.0.0.1:8000/api/auth/jwt/create/", {
       method: "POST",
       headers: {
@@ -56,25 +64,23 @@ export const AuthProvider = ({ children }) => {
         password: e.target.password.value,
       }),
     })
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        } else throw new Error("something went wrong");
-      })
+      .then(responseCheck)
       .then((data) => {
         setUser(jwtDecode(data.access));
         setAuthTokens(data);
         localStorage.setItem("authTokens", JSON.stringify(data));
         navigate("/");
       })
-      .catch((error) => alert(error));
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   const logoutUser = () => {
     setUser(null);
     setAuthTokens(null);
     localStorage.removeItem("authTokens");
-    navigate("/login");
+    navigate("/");
   };
 
   const updateToken = () => {
