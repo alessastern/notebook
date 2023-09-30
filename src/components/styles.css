@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
 
 :root {
-  --dark: rgb(150, 105, 105);
-  --medium: rosybrown;
-  --light: rgb(255, 227, 223);
-  --transitions: rgb(250, 205, 212);
-  --contour: rgb(116, 91, 91);
+  --dark: rgb(93, 68, 97);
+  --medium: rgb(173, 126, 142);
+  --light: rgb(233, 223, 222);
+  --transitions: rgb(232, 214, 228);
+  --contour: rgb(84, 57, 100);
   --alert: red;
   --shadows: rgb(99, 98, 98);
 }
@@ -111,7 +111,7 @@
   margin-top: 2rem;
   height: 2rem;
   background-color: var(--dark);
-  color: rgb(71, 56, 56);
+  color: var(--light);
   font-family: "Montserrat";
 }
 
