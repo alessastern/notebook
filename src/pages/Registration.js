@@ -1,27 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
-import { useState } from "react";
+import SomeError from "../components/SomeError";
 
 function Registration() {
-  const { signupUser } = useContext(AuthContext);
-  const [show, setShow] = useState(false);
+  const { signupUser, error, setError } = useContext(AuthContext);
 
-  function PassWordError() {
-    return <p className="errormessage">passwords do not match!</p>;
-  }
-
+  useEffect(() => setError(null), []);
   return (
     <div className="pagecontainer">
       <div className="loginsignup">
         <p className="title">sign up</p>
-        {show ? <PassWordError /> : null}
+        {error ? <SomeError error={error} /> : null}
         <form
           id="signup"
           onSubmit={(e) => {
             e.preventDefault();
             e.target.password.value === e.target.confirmpassword.value
               ? signupUser(e)
-              : setShow(true);
+              : setError("passwords do not match!");
           }}
         >
           <input

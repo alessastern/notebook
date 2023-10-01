@@ -2,14 +2,19 @@ import { useContext } from "react";
 import "../components/styles.css";
 import AuthContext from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import SomeError from "../components/SomeError";
 
 function Login() {
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, error, setError } = useContext(AuthContext);
+
+  useEffect(() => setError(null), []);
 
   return (
     <div className="pagecontainer">
       <div className="loginsignup">
         <p className="title">log in</p>
+        {error ? <SomeError error={error} /> : null}
         <form id="login" onSubmit={loginUser}>
           <input
             name="username"

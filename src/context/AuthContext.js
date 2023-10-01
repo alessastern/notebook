@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }) => {
 
   const signupUser = (e) => {
     e.preventDefault();
-    console.log(e.target[0].value, e.target[1].value);
     fetch("http://127.0.0.1:8000/api/auth/users/", {
       method: "POST",
       headers: {
@@ -37,11 +36,11 @@ export const AuthProvider = ({ children }) => {
     })
       .then((response) => {
         if (response.status === 201) loginUser(e);
-        else if (response.status === 400)
-          throw new Error("either password or username are invalid");
-        else throw new Error("something went wrong");
+        else throw new Error("either password or username are invalid");
       })
-      .catch((error) => alert(error));
+      .catch((err) => {
+        setError(err.message);
+      });
   };
 
   const loginUser = (e) => {
@@ -53,7 +52,6 @@ export const AuthProvider = ({ children }) => {
       }
     };
     e.preventDefault();
-
     fetch("http://127.0.0.1:8000/api/auth/jwt/create/", {
       method: "POST",
       headers: {
@@ -72,9 +70,11 @@ export const AuthProvider = ({ children }) => {
         navigate("/");
       })
       .catch((err) => {
-        alert(err);
+        setError(err);
       });
   };
+
+  const [error, setError] = useState(null);
 
   const logoutUser = () => {
     setUser(null);
@@ -110,9 +110,11 @@ export const AuthProvider = ({ children }) => {
   const contextData = {
     user: user,
     authTokens: authTokens,
+    error: error,
     signupUser: signupUser,
     loginUser: loginUser,
     logoutUser: logoutUser,
+    setError: setError,
   };
 
   useEffect(() => {
