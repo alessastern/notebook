@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
     })
       .then((response) => {
         if (response.status === 201) loginUser(e);
-        else throw new Error("either password or username are invalid");
+        else throw new Error("either password or username is invalid");
       })
       .catch((err) => {
         setError(err.message);
