@@ -1,4 +1,4 @@
-<h1 style="text-align: center; color: rgb(84, 57, 100)" >NoteBook React App</h1>
+<h1>NoteBook React App</h1>
 <p> This is a notebook app, which consists of 3 main pages, registration and login page forms.
 Connected to the API, thus allowing registration.</p>
 
