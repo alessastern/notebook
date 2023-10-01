@@ -18,8 +18,6 @@ export const AuthProvider = ({ children }) => {
       : null
   );
 
-  const [loading, setLoading] = useState(true);
-
   const navigate = useNavigate();
 
   const signupUser = (e) => {
@@ -104,6 +102,7 @@ export const AuthProvider = ({ children }) => {
         setUser(jwtDecode(data.access));
         setAuthTokens(data);
         localStorage.setItem("authTokens", JSON.stringify(data));
+        console.log("updated!");
       });
   };
 
@@ -122,7 +121,7 @@ export const AuthProvider = ({ children }) => {
       if (authTokens) updateToken();
     }, 240000);
     return () => clearInterval(interval);
-  }, [authTokens, loading]);
+  }, [authTokens]);
 
   return (
     <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
