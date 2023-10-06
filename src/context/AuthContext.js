@@ -18,8 +18,6 @@ export const AuthProvider = ({ children }) => {
       : null
   );
 
-  const [loading, setLoading] = useState(true);
-
   const navigate = useNavigate();
 
   const signupUser = (e) => {
@@ -36,7 +34,7 @@ export const AuthProvider = ({ children }) => {
     })
       .then((response) => {
         if (response.status === 201) loginUser(e);
-        else throw new Error("either password or username are invalid");
+        else throw new Error("either password or username is invalid");
       })
       .catch((err) => {
         setError(err.message);
@@ -122,7 +120,7 @@ export const AuthProvider = ({ children }) => {
       if (authTokens) updateToken();
     }, 240000);
     return () => clearInterval(interval);
-  }, [authTokens, loading]);
+  }, [authTokens]);
 
   return (
     <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>

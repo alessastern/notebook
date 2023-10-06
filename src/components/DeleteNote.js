@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
 
-function DeleteNote(props) {
+export function DeleteNote(props) {
   const [show, setShow] = useState(false);
 
   function Modal(props) {

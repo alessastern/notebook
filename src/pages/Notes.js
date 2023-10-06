@@ -23,7 +23,9 @@ function Notes() {
         if (response.status === 200) return response.json();
         else throw new Error("something went wrong");
       })
-      .then((data) => setNotes(data))
+      .then((data) => {
+        setNotes(data);
+      })
       .catch((error) => alert(error));
   };
 
