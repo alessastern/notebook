@@ -3,23 +3,25 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 
+
 function Header() {
   const { user, logoutUser } = useContext(AuthContext);
 
   return (
     <div className="headers">
       <div style={{ display: "flex" }}>
-        <div style={{ marginLeft: "3rem" }}>
+        <NavLink to="/"><img style={{ height: "35px", }} src="/logo.png" /></NavLink>
+        <div style={{ marginLeft: "2rem" }}>
           <NavLink
             key="homepage"
             to="/"
             style={({ isActive }) =>
               isActive
                 ? {
-                    fontWeight: "bold",
-                    textDecoration: "none",
-                    color: "var(--light)",
-                  }
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  color: "var(--light)",
+                }
                 : { textDecoration: "none", color: "var(--light)" }
             }
           >
@@ -33,10 +35,10 @@ function Header() {
             style={({ isActive }) =>
               isActive
                 ? {
-                    fontWeight: "bold",
-                    textDecoration: "none",
-                    color: "var(--light)",
-                  }
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  color: "var(--light)",
+                }
                 : { textDecoration: "none", color: "var(--light)" }
             }
           >
@@ -50,10 +52,10 @@ function Header() {
             style={({ isActive }) =>
               isActive
                 ? {
-                    fontWeight: "bold",
-                    textDecoration: "none",
-                    color: "var(--light)",
-                  }
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  color: "var(--light)",
+                }
                 : { textDecoration: "none", color: "var(--light)" }
             }
           >

@@ -184,7 +184,7 @@ dialog {
   background-color: var(--dark);
   color: var(--light);
   font-size: 18px;
-  padding-top: 1rem;
+  padding-top: 0.6rem;
   padding-right: 1rem;
   padding-left: 1rem;
   font-family: "Montserrat";
@@ -196,8 +196,8 @@ dialog {
   text-align: center;
   margin-top: 2rem;
   height: 2rem;
-  background-color: var(--dark);
-  color: var(--light);
+  background-color: var(--transitions);
+  color: var(--contour);
   font-family: "Montserrat";
 }
 
