@@ -12,8 +12,8 @@ class Tag(models.Model):
 
 
 class Note(models.Model):
-    title = models.CharField(max_length=50)
-    text = models.TextField()
+    title = models.CharField(max_length=50, blank=True)
+    text = models.TextField(blank=True, )
     created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, auto_now_add=False)
     author = models.ForeignKey(
@@ -36,8 +36,8 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='images')
-    description = models.TextField()
+    description = models.TextField(blank=True,)
     created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self) -> str:
-        return self.description[:25]
+        return self.author
