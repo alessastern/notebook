@@ -2,6 +2,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import filters
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
 
 from api.pagination import ImagePagination
 from api.serializers import NoteSerizalizer, ImageSerializer
@@ -29,6 +30,7 @@ class ImageViewSet(ModelViewSet):
     filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
     ordering = ('-created_at')
     pagination_class = ImagePagination
+    parser_classes = (MultiPartParser, FormParser)
 
     def get_queryset(self):
         user = self.request.user
