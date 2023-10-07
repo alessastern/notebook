@@ -18,11 +18,10 @@ function AddImage(props) {
               id="add"
               onSubmit={(e) => {
                 e.preventDefault();
-                console.log(image);
-                props.addImage(image, description);
+                props.addImage(image, description ? description : "");
                 setImage(null);
                 setDescription("");
-                // window.location.reload();
+                window.location.reload();
               }}
             >
               <div className="">

@@ -33,20 +33,16 @@ function Images() {
 
   const addImage = (image, description) => {
     let data = new FormData();
-    data.append("image", image.name);
+    data.append("image", image);
     data.append("description", description);
 
-    fetch(
-      ("http://127.0.0.1:8000/api/images/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${authTokens.access}`,
-        },
-        body: data,
-      })
-    ).then((response) => console.log(response));
+    fetch("http://127.0.0.1:8000/api/images/", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${authTokens.access}`,
+      },
+      body: data,
+    }).then((response) => console.log(response));
   };
 
   const editDescription = (id, description) => {
