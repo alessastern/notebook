@@ -31,7 +31,11 @@ function Images() {
       })
       .catch((err) => alert(err));
 
-  const addImage = (data) => {
+  const addImage = (image, description) => {
+    let data = new FormData();
+    data.append("image", image.name);
+    data.append("description", description);
+
     fetch(
       ("http://127.0.0.1:8000/api/images/",
       {
@@ -42,7 +46,7 @@ function Images() {
         },
         body: data,
       })
-    );
+    ).then((response) => console.log(response));
   };
 
   const editDescription = (id, description) => {

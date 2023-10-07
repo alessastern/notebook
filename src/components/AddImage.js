@@ -6,7 +6,6 @@ function AddImage(props) {
   function Modal(props) {
     const [image, setImage] = useState(null);
     const [description, setDescription] = useState("");
-    const form = document.getElementById("add");
 
     return (
       <div className="modal-background">
@@ -18,12 +17,11 @@ function AddImage(props) {
             <form
               id="add"
               onSubmit={(e) => {
-                const formData = new FormData(form);
-                console.log(...formData);
                 e.preventDefault();
+                console.log(image);
+                props.addImage(image, description);
                 setImage(null);
                 setDescription("");
-                props.addImage(...formData);
                 // window.location.reload();
               }}
             >
@@ -35,6 +33,7 @@ function AddImage(props) {
                     className="inputs"
                     type="file"
                     accept="image/*"
+                    onChange={(e) => setImage(e.target.files[0])}
                   ></input>
                 </label>
               </div>

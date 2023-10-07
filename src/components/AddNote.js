@@ -5,8 +5,8 @@ function AddNote(props) {
   const [show, setShow] = useState(false);
 
   function Modal(props) {
-    const [image, setImage] = useState("");
-    const [description, setDescription] = useState("");
+    const [title, setTitle] = useState("");
+    const [text, setText] = useState("");
     return (
       <div className="modal-background">
         <div className="modalbody">
@@ -18,9 +18,9 @@ function AddNote(props) {
               id="add"
               onSubmit={(e) => {
                 e.preventDefault();
-                setImage("");
-                setDescription("");
-                props.addNote(image, description);
+                setTitle("");
+                setText("");
+                props.addNote(title, text);
                 window.location.reload();
               }}
             >
@@ -28,10 +28,10 @@ function AddNote(props) {
                 <input
                   className="inputs"
                   type="file"
-                  value={image}
+                  value={title}
                   placeholder="Title"
                   onChange={(e) => {
-                    setImage(e.target.files);
+                    setTitle(e.target.value);
                   }}
                 ></input>
               </div>
@@ -39,10 +39,10 @@ function AddNote(props) {
                 <textarea
                   className="inputtext"
                   type="text"
-                  value={description}
+                  value={text}
                   placeholder="Description"
                   onChange={(e) => {
-                    setDescription(e.target.value);
+                    setText(e.target.value);
                   }}
                 ></textarea>
               </div>
