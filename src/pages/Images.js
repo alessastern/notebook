@@ -4,6 +4,8 @@ import Image from "../components/Image";
 import { useEffect } from "react";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
+import ImageCloseup from "../components/ImageCloseup";
+import AddImage from "../components/AddImage";
 
 function Images() {
   const [images, setImages] = useState();
@@ -28,6 +30,20 @@ function Images() {
         setImages(data.results);
       })
       .catch((err) => alert(err));
+
+  const addImage = (data) => {
+    fetch(
+      ("http://127.0.0.1:8000/api/images/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${authTokens.access}`,
+        },
+        body: data,
+      })
+    );
+  };
 
   const editDescription = (id, description) => {
     let obj = {};
@@ -55,9 +71,7 @@ function Images() {
 
   return (
     <div className="pagecontainer">
-      <div className="addButtonDiv">
-        <button className="addButton">Add an image</button>
-      </div>
+      <AddImage addImage={addImage} />
       <div className="flexcontain">
         <>
           {images
@@ -71,6 +85,7 @@ function Images() {
                     editDescription={editDescription}
                     showImage={showImage}
                     deleteImage={deleteImage}
+                    ImageCloseup={ImageCloseup}
                   />
                 );
               })

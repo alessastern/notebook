@@ -60,8 +60,9 @@
   cursor: pointer;
 }
 
-dialog {
-  position: absolute;
+.dialogModal {
+  padding: 10px;
+  position: relative;
   border-radius: 10px;
   border: 2px solid var(--contour);
   width: fit-content;
@@ -72,20 +73,17 @@ dialog {
   z-index: 1;
 }
 
-/* dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.3);
-} */
-
 .modalzoomcont {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  columns: 2;
+  columns: 1;
 }
 
 .column1 {
   margin: auto;
   width: 200px;
+  display: block;
 }
 
 .editDescription {
@@ -101,12 +99,28 @@ dialog {
   margin-left: 8px;
 }
 
+.flexdescription {
+  font-family: "Montserrat";
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  width: 300px;
+}
+
 @media screen and (max-width: 1232px) {
   .column1 {
     width: 100%;
   }
   .editDescription {
     height: min-content;
+  }
+  .flexdescription {
+    margin: auto;
+    text-align: center;
+  }
+
+  .dialogModal {
+    top: 10%;
   }
 }
 
@@ -172,7 +186,7 @@ dialog {
   border-radius: 10px;
   border: 2px solid var(--contour);
   width: 30%;
-  top: 30%;
+  top: 15%;
   margin: auto;
   display: block;
   background-color: var(--light);
@@ -193,7 +207,7 @@ dialog {
   background-color: var(--dark);
   color: var(--light);
   font-size: 18px;
-  padding-top: 0.6rem;
+  padding-top: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
   font-family: "Montserrat";

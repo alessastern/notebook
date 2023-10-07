@@ -1,42 +1,46 @@
 import { useState } from "react";
-import "./styles.css";
 
-function AddNote(props) {
+function AddImage(props) {
   const [show, setShow] = useState(false);
 
   function Modal(props) {
-    const [image, setImage] = useState("");
+    const [image, setImage] = useState(null);
     const [description, setDescription] = useState("");
+    const form = document.getElementById("add");
+
     return (
       <div className="modal-background">
         <div className="modalbody">
           <div className="title">
-            <h2>Add a note</h2>
+            <h2>Add an image</h2>
           </div>
           <div className="">
             <form
               id="add"
               onSubmit={(e) => {
+                const formData = new FormData(form);
+                console.log(...formData);
                 e.preventDefault();
-                setImage("");
+                setImage(null);
                 setDescription("");
-                props.addNote(image, description);
-                window.location.reload();
+                props.addImage(...formData);
+                // window.location.reload();
               }}
             >
               <div className="">
-                <input
-                  className="inputs"
-                  type="file"
-                  value={image}
-                  placeholder="Title"
-                  onChange={(e) => {
-                    setImage(e.target.files);
-                  }}
-                ></input>
+                <label style={{ fontFamily: "Montserrat" }}>
+                  Image file
+                  <input
+                    name="image"
+                    className="inputs"
+                    type="file"
+                    accept="image/*"
+                  ></input>
+                </label>
               </div>
-              <div>
+              <div className="">
                 <textarea
+                  name="description"
                   className="inputtext"
                   type="text"
                   value={description}
@@ -64,15 +68,15 @@ function AddNote(props) {
   return (
     <div className="addButtonDiv">
       <button className="addButton" onClick={() => setShow(true)}>
-        Add a note
+        Add an image
       </button>
       {show ? (
         <>
-          <Modal addNote={props.addNote} />
+          <Modal addImage={props.addImage} />
         </>
       ) : null}
     </div>
   );
 }
 
-export default AddNote;
+export default AddImage;

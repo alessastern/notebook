@@ -1,11 +1,14 @@
 import { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
 import SomeError from "../components/SomeError";
+import { useState } from "react";
 
 function Registration() {
   const { signupUser, error, setError } = useContext(AuthContext);
-
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmPassword] = useState("");
   useEffect(() => setError(null), []);
+
   return (
     <div className="pagecontainer">
       <div className="loginsignup">
@@ -15,9 +18,11 @@ function Registration() {
           id="signup"
           onSubmit={(e) => {
             e.preventDefault();
-            e.target.password.value === e.target.confirmpassword.value
+            password === confirmpassword
               ? signupUser(e)
               : setError("passwords do not match!");
+            setConfirmPassword("");
+            setPassword("");
           }}
         >
           <input
@@ -33,6 +38,8 @@ function Registration() {
             style={{ width: "100%", marginTop: "10px" }}
             type="password"
             placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           ></input>
           <input
             name="confirmpassword"
@@ -40,6 +47,8 @@ function Registration() {
             style={{ width: "100%", marginTop: "10px" }}
             type="password"
             placeholder="confirm your password"
+            value={confirmpassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
         </form>
         <div className="modalfooter">
