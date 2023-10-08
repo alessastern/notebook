@@ -12,6 +12,12 @@
 
 * {
   box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 .pagination {
@@ -27,6 +33,7 @@
   background-color: var(--light);
   border: 1px solid var(--contour);
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .pagination a:hover {
@@ -37,7 +44,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 1rem;
+  margin: 5px;
+  align-items: center;
 }
 
 .descriptions {
@@ -61,6 +69,7 @@
 
 .imgcontainer:hover {
   box-shadow: 5px 5px 5px var(--shadows);
+  transition: 0.2s;
 }
 
 .imgs {
@@ -132,33 +141,31 @@
   }
   .editDescription {
     height: min-content;
+    margin-left: 0;
   }
   .flexdescription {
     margin: auto;
     text-align: center;
   }
-
-  .dialogModal {
-    top: 10%;
-  }
 }
 
 .note {
-  margin: auto;
+  margin: 5px;
   margin-top: 1rem;
   background-color: var(--light);
   width: 40%;
   max-width: 500px;
   overflow-wrap: break-word;
   min-height: 16rem;
-  box-shadow: 5px 5px 5px var(--shadows);
   border-radius: 10px;
   border: 2px solid var(--contour);
+  padding: 5px;
 }
 
 .note:hover {
   background-color: var(--transitions);
   transition: 0.2s;
+  box-shadow: 5px 5px 5px var(--shadows);
 }
 
 .button {
@@ -204,7 +211,7 @@
   text-align: center;
   border-radius: 10px;
   border: 2px solid var(--contour);
-  width: 30%;
+  width: 50%;
   top: 15%;
   margin: auto;
   display: block;
@@ -332,7 +339,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 630px) {
   .loginButton {
     margin-left: 10px;
     font-size: 13px;
@@ -341,6 +348,10 @@
   }
   .droprowncontent {
     margin-top: 60%;
+  }
+  .note {
+    width: 300px;
+    height: min-content;
   }
 }
 

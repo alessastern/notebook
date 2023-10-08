@@ -27,7 +27,7 @@ function AddNote(props) {
               <div className="">
                 <input
                   className="inputs"
-                  type="file"
+                  type="text"
                   value={title}
                   placeholder="Title"
                   onChange={(e) => {

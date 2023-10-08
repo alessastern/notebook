@@ -5,7 +5,6 @@ function ImageCloseup(props) {
   const [show, setShow] = useState(props.show);
   const [edit, showEdit] = useState(false);
   const [descr, setDescr] = useState(props.description);
-  const [del, showDel] = useState(false);
 
   return (
     show && (

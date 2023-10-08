@@ -3,6 +3,7 @@ import Note from "../components/Note";
 import { useState, useEffect, useContext } from "react";
 import AddNote from "../components/AddNote";
 import AuthContext from "../context/AuthContext";
+import NoteCloseup from "../components/NoteCloseup";
 
 function Notes() {
   const [notes, setNotes] = useState();
@@ -68,7 +69,7 @@ function Notes() {
     <div className="pagecontainer">
       <AddNote addNote={addNote} />
       <>
-        <div className="flexcontain" style={{ columns: "2" }}>
+        <div className="flexcontain" style={{ margin: "0" }}>
           {notes
             ? notes.map((note) => {
                 return (
@@ -81,6 +82,7 @@ function Notes() {
                     updated_at={note.updated_at}
                     updateNote={updateNote}
                     deleteNote={deleteNote}
+                    NoteCloseup={NoteCloseup}
                   />
                 );
               })

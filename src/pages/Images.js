@@ -42,8 +42,7 @@ function Images() {
     let data = new FormData();
     data.append("image", image);
     data.append("description", description);
-
-    fetch("http://127.0.0.1:8000/api/images/", {
+    fetch(url, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${authTokens.access}`,
@@ -53,15 +52,14 @@ function Images() {
   };
 
   const editDescription = (id, description) => {
-    let obj = {};
-    obj.description = description;
+    let data = new FormData();
+    data.append("description", description);
     fetch(`http://127.0.0.1:8000/api/images/${id}/`, {
       method: "PATCH",
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${authTokens.access}`,
       },
-      body: JSON.stringify(obj),
+      body: data,
     });
   };
 
