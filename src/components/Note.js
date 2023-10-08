@@ -20,6 +20,7 @@ function Note(props) {
       <div
         style={{
           display: "flex",
+          flexWrap: "wrap",
           justifyContent: "left",
           margin: "1rem",
           marginLeft: "1rem",

@@ -68,22 +68,24 @@ function Notes() {
     <div className="pagecontainer">
       <AddNote addNote={addNote} />
       <>
-        {notes
-          ? notes.map((note) => {
-              return (
-                <Note
-                  key={note.id}
-                  id={note.id}
-                  title={note.title}
-                  text={note.text}
-                  created_at={note.created_at}
-                  updated_at={note.updated_at}
-                  updateNote={updateNote}
-                  deleteNote={deleteNote}
-                />
-              );
-            })
-          : null}
+        <div className="flexcontain" style={{ columns: "2" }}>
+          {notes
+            ? notes.map((note) => {
+                return (
+                  <Note
+                    key={note.id}
+                    id={note.id}
+                    title={note.title}
+                    text={note.text}
+                    created_at={note.created_at}
+                    updated_at={note.updated_at}
+                    updateNote={updateNote}
+                    deleteNote={deleteNote}
+                  />
+                );
+              })
+            : null}
+        </div>
       </>
     </div>
   );

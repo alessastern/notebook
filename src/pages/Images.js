@@ -6,17 +6,22 @@ import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import ImageCloseup from "../components/ImageCloseup";
 import AddImage from "../components/AddImage";
+import Pagination from "../components/Pagination";
 
 function Images() {
   const [images, setImages] = useState();
+  const [previous, setPrevious] = useState(null);
+  const [next, setNext] = useState(null);
+  const [url, setUrl] = useState("http://localhost:8000/api/images/");
+
   const { authTokens } = useContext(AuthContext);
 
   useEffect(() => {
-    getImages();
-  }, []);
+    getImages(url);
+  }, [url]);
 
-  const getImages = () =>
-    fetch("http://localhost:8000/api/images/", {
+  const getImages = (url) =>
+    fetch(url, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${authTokens.access}`,
@@ -28,6 +33,8 @@ function Images() {
       })
       .then((data) => {
         setImages(data.results);
+        setNext(data.next);
+        setPrevious(data.previous);
       })
       .catch((err) => alert(err));
 
@@ -42,7 +49,7 @@ function Images() {
         Authorization: `Bearer ${authTokens.access}`,
       },
       body: data,
-    }).then((response) => console.log(response));
+    });
   };
 
   const editDescription = (id, description) => {
@@ -91,6 +98,14 @@ function Images() {
               })
             : null}
         </>
+      </div>
+      <div>
+        <Pagination
+          previous={previous}
+          next={next}
+          getImages={getImages}
+          setUrl={setUrl}
+        />
       </div>
     </div>
   );
