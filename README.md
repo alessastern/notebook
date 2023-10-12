@@ -9,7 +9,7 @@ Connected to the API, thus allowing registration.</p>
 <li>HOME ('/') - Homepage with a greeting message, which also suggests to login or signup depending on if user is logged in or not. <img src="https://github.com/alessastern/notebook/assets/134006736/20702d01-a7a0-4bf3-8b1c-464ac8d3b5fd"/> <img src="https://github.com/alessastern/notebook/assets/134006736/d2995d9b-a7e4-4e9f-8aff-47bf10b7a50b"/>
 </li> 
 
-<li>  NOTES ('/notes') - private route (only accessible if user is logged in), a page with all the notes created by current user listed from newest to oldest. Allows to add, delete or edit existing notes. If note's length is bigger than 200 characters, button "view full text", allowing to open the note in a new modal window. <img src="https://github.com/alessastern/notebook/assets/134006736/05047602-1cf8-4058-a5f2-44aa86db1395"/> <img src="https://github.com/alessastern/notebook/assets/134006736/eeba377a-c694-43f1-a07c-13cf0e080263"/>
+<li>  NOTES ('/notes') - private route (only accessible if user is logged in), a page with all the notes created by current user listed from newest to oldest. Allows to add, delete or edit existing notes. If note's length is bigger than 200 characters, button "view full text", allowing to open the note in a new modal window. <img src="https://github.com/alessastern/notebook/assets/134006736/ef942388-2b99-4895-b8fc-18b30eae2e80"/> <img src="https://github.com/alessastern/notebook/assets/134006736/eeba377a-c694-43f1-a07c-13cf0e080263"/>
 <img src="https://github.com/alessastern/notebook/assets/134006736/a7055429-a63c-47ef-ae57-8efc9af43fe2)"/>
 
 </li>
