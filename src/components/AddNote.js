@@ -8,8 +8,8 @@ function AddNote(props) {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     return (
-      <div className="modal-background">
-        <div className="modalbody">
+      <div className="modal-background" onClick={() => setShow(false)}>
+        <div className="modalbody" onClick={(e) => e.stopPropagation()}>
           <div className="title">
             <h2>Add a note</h2>
           </div>

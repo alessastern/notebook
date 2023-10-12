@@ -8,8 +8,11 @@ function ImageCloseup(props) {
 
   return (
     show && (
-      <div className="modal-background">
-        <div className="dialogModal">
+      <div
+        className="modal-background"
+        onClick={() => props.setShowModal(false)}
+      >
+        <div className="dialogModal" onClick={(e) => e.stopPropagation()}>
           <div className="modalzoomcont">
             <img
               className="imgsmodal"
@@ -50,6 +53,7 @@ function ImageCloseup(props) {
                     width: "200px",
                     padding: "5px",
                   }}
+                  onClick={() => showEdit(true)}
                 >
                   {props.description}
                 </p>

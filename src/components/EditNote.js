@@ -9,8 +9,8 @@ function EditNote(props) {
     const [title, setTitle] = useState(props.title);
     const [text, setText] = useState(props.text);
     return (
-      <div className="modal-background">
-        <div className="modalbody">
+      <div className="modal-background" onClick={() => setShow(false)}>
+        <div className="modalbody" onClick={(e) => e.stopPropagation()}>
           <div className="title">
             <h2>Edit your note</h2>
           </div>
