@@ -10,7 +10,13 @@ Connected to the API, thus allowing registration.</p>
 </li> 
 
 <li>  NOTES ('/notes') - private route (only accessible if user is logged in), a page with all the notes created by current user listed from newest to oldest. Allows to add, delete or edit existing notes. If note's length is bigger than 200 characters, button "view full text", allowing to open the note in a new modal window. <img src="https://github.com/alessastern/notebook/assets/134006736/ef942388-2b99-4895-b8fc-18b30eae2e80"/> <img src="https://github.com/alessastern/notebook/assets/134006736/eeba377a-c694-43f1-a07c-13cf0e080263"/>
-<img src="https://github.com/alessastern/notebook/assets/134006736/a7055429-a63c-47ef-ae57-8efc9af43fe2)"/>
+adding a new note: <img src="https://github.com/alessastern/notebook/assets/134006736/3fb14e07-d147-4a89-9ffa-94cf6e09e342"/> 
+editing an existing one: <img src="https://github.com/alessastern/notebook/assets/134006736/7afaa5e0-3747-41e3-8bbc-40acc1e6c75f"/>
+deleting an existing note: <img src="https://github.com/alessastern/notebook/assets/134006736/756844eb-c88f-4f28-90b0-ee329385927f"/>
+
+
+
+
 
 </li>
 
