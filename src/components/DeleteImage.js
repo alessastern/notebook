@@ -7,7 +7,11 @@ export function DeleteImage(props) {
   function Modal(props) {
     return (
       <div className="modal-background" onClick={() => setShow(false)}>
-        <div className="modalbody" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="modalbody"
+          onClick={(e) => e.stopPropagation()}
+          style={{ width: "35%" }}
+        >
           <div className="title">
             <h2>Are you sure?</h2>
           </div>
