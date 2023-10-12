@@ -6,7 +6,7 @@ import NoteCloseup from "./NoteCloseup";
 function Note(props) {
   return (
     <div className="note">
-      <div style={{ minHeight: "13rem", padding: "5px" }}>
+      <div style={{ minHeight: "80%", padding: "5px" }}>
         <div className="title">{props.title}</div>
         <div
           className="plaintext"
