@@ -17,11 +17,14 @@ Frontend by: https://github.com/alessastern/
 <li> IMAGES ('/images')- private route (only accessible if user is logged in), contains 5 images per page and a pagination button. Allows to open every image in a modal window, edit it's description, view fullsize image or delete it.  <img src="https://github.com/alessastern/notebook/assets/134006736/22625919-95cf-40db-b152-d2dc7b9b2486"/> <img src="https://github.com/alessastern/notebook/assets/134006736/bc406fe0-954e-4945-8e7b-cd5070aea8de"/>
  </li>
 
-<li>  REGISTRATION (/registration) - can be reached from dropdown menu from the header, from homepage, from login form page. Allows to register a new user using API, checks if passwords are matching and logs user in immediately after the signup is successful. <img src="https://github.com/alessastern/notebook/assets/134006736/fe983951-aba0-4340-a2ae-7487af26fe71"/> If passwords do not match: <img src="https://github.com/alessastern/notebook/assets/134006736/134a3e57-e699-4032-8e70-a54483e038c5"/> If values are not suitable for the api: <img src="https://github.com/alessastern/notebook/assets/134006736/3840bc00-78a9-4660-8a34-0a0712f7cf82"/>
+<li>  REGISTRATION (/registration) - can be reached from dropdown menu from the header, from homepage, from login form page. Allows to register a new user using API, checks if passwords are matching and logs user in immediately after the signup is successful. <img src="https://github.com/alessastern/notebook/assets/134006736/fe983951-aba0-4340-a2ae-7487af26fe71"/> 
+ <p>If passwords do not match: <img src="https://github.com/alessastern/notebook/assets/134006736/134a3e57-e699-4032-8e70-a54483e038c5"/> </p>
+ <p>If values are not suitable for the api: <img src="https://github.com/alessastern/notebook/assets/134006736/3840bc00-78a9-4660-8a34-0a0712f7cf82"/></p>
 
 </li>
 
-<li> LOGIN ('/login) - login page for existing users, allows to log in into the app. Can be reached from homepage, header, also user is redirected here every time they try to access private routes without being logged. !<img src="https://github.com/alessastern/notebook/assets/134006736/25e02673-97ef-465f-a3f8-db28d0ae9a84"/> If account doesn't exist: <img src="https://github.com/alessastern/notebook/assets/134006736/58fa1097-d6af-4a46-871f-c8dc1622aa91"/>
+<li> LOGIN ('/login) - login page for existing users, allows to log in into the app. Can be reached from homepage, header, also user is redirected here every time they try to access private routes without being logged. !<img src="https://github.com/alessastern/notebook/assets/134006736/25e02673-97ef-465f-a3f8-db28d0ae9a84"/> 
+ <p>If account doesn't exist: <img src="https://github.com/alessastern/notebook/assets/134006736/58fa1097-d6af-4a46-871f-c8dc1622aa91"/></p>
 
 </li> 
 </ul>
