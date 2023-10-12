@@ -2,8 +2,8 @@
 <p> This is a notebook app, which consists of 3 main pages, registration and login page forms. All pages made to have responsive design. Planning to add dark theme and a mobile version in future. 
 Connected to the API, thus allowing registration.</p>
 
-Backend by: <a href="https://github.com/blakkheart"><img src="https://avatars.githubusercontent.com/u/118317748?v=4" style="border-radius: 10px width:62px;height:62px;"/></a>
-Frontend by: https://github.com/alessastern/
+<p>Backend by: <a href="https://github.com/blakkheart"><img src="https://avatars.githubusercontent.com/u/118317748?v=4" style="border-radius: 75px; width:62px;height:62px;"/></a></p>
+<p>Frontend by: <a href="https://github.com/alessastern/"><img src="https://avatars.githubusercontent.com/u/134006736?v=4" style="border-radius: 75px; width:62px;height:62px;"/></a></p>
 
 <ul>
 <li>HOME ('/') - Homepage with a greeting message, which also suggests to login or signup depending on if user is logged in or not. <img src="https://github.com/alessastern/notebook/assets/134006736/20702d01-a7a0-4bf3-8b1c-464ac8d3b5fd"/> <img src="https://github.com/alessastern/notebook/assets/134006736/d2995d9b-a7e4-4e9f-8aff-47bf10b7a50b"/>
