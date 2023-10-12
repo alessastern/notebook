@@ -6,7 +6,7 @@ import NoteCloseup from "./NoteCloseup";
 function Note(props) {
   return (
     <div className="note">
-      <div style={{ minHeight: "80%", padding: "5px" }}>
+      <div className="notetexts">
         <div className="title">{props.title}</div>
         <div
           className="plaintext"
@@ -20,15 +20,7 @@ function Note(props) {
             : `${props.text.slice(0, 201)}...`}
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "left",
-          margin: "5px",
-          padding: "5px",
-        }}
-      >
+      <div className="notefooter">
         <>
           <EditNote
             id={props.id}

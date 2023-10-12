@@ -137,20 +137,6 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1232px) {
-  .column1 {
-    width: 100%;
-  }
-  .editDescription {
-    height: min-content;
-    margin-left: 0;
-  }
-  .flexdescription {
-    margin: auto;
-    text-align: center;
-  }
-}
-
 .note {
   margin: 5px;
   margin-top: 1rem;
@@ -170,6 +156,18 @@
   box-shadow: 5px 5px 5px var(--shadows);
 }
 
+.notefooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+.notetexts {
+  min-height: 80%;
+  padding: 5px;
+}
 .button {
   background-color: var(--medium);
   padding-left: 10px;
@@ -343,7 +341,37 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 1232px) {
+  .column1 {
+    width: 100%;
+  }
+  .editDescription {
+    height: min-content;
+    margin-left: 0;
+  }
+  .flexdescription {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .note {
+    min-height: 350px;
+  }
+  .notetexts {
+    overflow: auto;
+    max-height: 30%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .note {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .loginButton {
     margin-left: 10px;
     font-size: 13px;
@@ -351,11 +379,12 @@
     display: flex;
   }
   .droprowncontent {
-    margin-top: 60%;
+    width: min-content;
+    padding: 9px;
+    margin-top: 40%;
   }
   .note {
     width: 300px;
-    height: min-content;
   }
 }
 
