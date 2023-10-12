@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
 
-export function DeleteNote(props) {
+export function DeleteImage(props) {
   const [show, setShow] = useState(false);
 
   function Modal(props) {
@@ -18,7 +18,7 @@ export function DeleteNote(props) {
             <button
               className="button-save"
               onClick={() => {
-                props.deleteNote(props.id);
+                props.deleteImage(props.id);
                 window.location.reload();
               }}
             >
@@ -39,10 +39,10 @@ export function DeleteNote(props) {
         <>
           <Modal
             id={props.id}
-            title={props.title}
-            text={props.text}
-            updateNote={props.updateNote}
-            deleteNote={props.deleteNote}
+            image={props.image}
+            description={props.description}
+            editDescription={props.editDescription}
+            deleteImage={props.deleteImage}
           />
         </>
       ) : null}
@@ -50,4 +50,4 @@ export function DeleteNote(props) {
   );
 }
 
-export default DeleteNote;
+export default DeleteImage;

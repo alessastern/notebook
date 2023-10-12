@@ -10,26 +10,162 @@
   --shadows: rgb(99, 98, 98);
 }
 
+* {
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  color: var(--contour);
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: var(--light);
+  border: 1px solid var(--contour);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pagination a:hover {
+  background-color: var(--transitions);
+}
+
+.flexcontain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px;
+  align-items: center;
+}
+
+.descriptions {
+  margin: auto;
+  text-align: center;
+  width: 300px;
+}
+
 .pagecontainer {
   min-height: 85vh;
   margin-top: 5rem;
 }
 
-.note {
+.imgcontainer {
+  padding: 10px 10px;
+  margin: 5px 5px;
+  border: 2px solid var(--contour);
+  border-radius: 10px;
+  background-color: var(--light);
+}
+
+.imgcontainer:hover {
+  box-shadow: 5px 5px 5px var(--shadows);
+  transition: 0.2s;
+}
+
+.imgs {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.imgsmodal {
   margin: auto;
+  width: max-content;
+  max-width: 90%;
+  height: 500px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.dialogModal {
+  padding: 10px;
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid var(--contour);
+  width: fit-content;
+  max-width: 80%;
+  top: 20%;
+  margin: auto;
+  background-color: var(--light);
+  z-index: 1;
+}
+
+.modalzoomcont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  columns: 1;
+}
+
+.column1 {
+  margin: auto;
+  width: 200px;
+  display: block;
+}
+
+.editDescription {
+  background-color: var(--light);
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  height: 100px;
+  text-align: center;
+  align-self: center;
+  resize: none;
+  overflow: auto;
+  margin-left: 5px;
+}
+
+.flexdescription {
+  font-family: "Montserrat";
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  width: 300px;
+}
+
+@media screen and (max-width: 1232px) {
+  .column1 {
+    width: 100%;
+  }
+  .editDescription {
+    height: min-content;
+    margin-left: 0;
+  }
+  .flexdescription {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.note {
+  margin: 5px;
   margin-top: 1rem;
   background-color: var(--light);
   width: 40%;
+  max-width: 500px;
   overflow-wrap: break-word;
   min-height: 16rem;
-  box-shadow: 5px 5px 5px var(--shadows);
   border-radius: 10px;
-  border: 2px solid var(--medium);
+  border: 2px solid var(--contour);
+  padding: 5px;
 }
 
 .note:hover {
   background-color: var(--transitions);
   transition: 0.2s;
+  box-shadow: 5px 5px 5px var(--shadows);
 }
 
 .button {
@@ -67,19 +203,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modalbody {
   position: relative;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid var(--medium);
-  width: 30%;
-  top: 30%;
+  border: 2px solid var(--contour);
+  width: 50%;
+  top: 15%;
   margin: auto;
   display: block;
-  justify-content: center;
   background-color: var(--light);
   padding: 2px;
 }
@@ -110,8 +245,8 @@
   text-align: center;
   margin-top: 2rem;
   height: 2rem;
-  background-color: var(--dark);
-  color: var(--light);
+  background-color: var(--transitions);
+  color: var(--contour);
   font-family: "Montserrat";
 }
 
@@ -156,7 +291,8 @@
 
 .addButton {
   font-size: 18px;
-  background-color: var(--medium);
+  background-color: var(--dark);
+  color: var(--transitions);
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
@@ -201,6 +337,22 @@
   padding-top: 3px;
   padding-bottom: 3px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 630px) {
+  .loginButton {
+    margin-left: 10px;
+    font-size: 13px;
+    float: right;
+    display: flex;
+  }
+  .droprowncontent {
+    margin-top: 60%;
+  }
+  .note {
+    width: 300px;
+    height: min-content;
+  }
 }
 
 .nav {

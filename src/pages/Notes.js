@@ -3,6 +3,7 @@ import Note from "../components/Note";
 import { useState, useEffect, useContext } from "react";
 import AddNote from "../components/AddNote";
 import AuthContext from "../context/AuthContext";
+import NoteCloseup from "../components/NoteCloseup";
 
 function Notes() {
   const [notes, setNotes] = useState();
@@ -23,7 +24,9 @@ function Notes() {
         if (response.status === 200) return response.json();
         else throw new Error("something went wrong");
       })
-      .then((data) => setNotes(data))
+      .then((data) => {
+        setNotes(data);
+      })
       .catch((error) => alert(error));
   };
 
@@ -66,22 +69,25 @@ function Notes() {
     <div className="pagecontainer">
       <AddNote addNote={addNote} />
       <>
-        {notes
-          ? notes.map((note) => {
-              return (
-                <Note
-                  key={note.id}
-                  id={note.id}
-                  title={note.title}
-                  text={note.text}
-                  created_at={note.created_at}
-                  updated_at={note.updated_at}
-                  updateNote={updateNote}
-                  deleteNote={deleteNote}
-                />
-              );
-            })
-          : null}
+        <div className="flexcontain" style={{ margin: "0" }}>
+          {notes
+            ? notes.map((note) => {
+                return (
+                  <Note
+                    key={note.id}
+                    id={note.id}
+                    title={note.title}
+                    text={note.text}
+                    created_at={note.created_at}
+                    updated_at={note.updated_at}
+                    updateNote={updateNote}
+                    deleteNote={deleteNote}
+                    NoteCloseup={NoteCloseup}
+                  />
+                );
+              })
+            : null}
+        </div>
       </>
     </div>
   );

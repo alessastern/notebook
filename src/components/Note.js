@@ -1,6 +1,7 @@
 import "./styles.css";
 import EditNote from "./EditNote";
 import DeleteNote from "./DeleteNote";
+import NoteCloseup from "./NoteCloseup";
 
 function Note(props) {
   return (
@@ -10,19 +11,22 @@ function Note(props) {
         <div
           className="plaintext"
           style={{
-            margin: "2rem",
+            margin: "10px",
             whiteSpace: "pre-wrap",
           }}
         >
-          {props.text}
+          {props.text.length < 200
+            ? props.text
+            : `${props.text.slice(0, 201)}...`}
         </div>
       </div>
       <div
         style={{
           display: "flex",
+          flexWrap: "wrap",
           justifyContent: "left",
-          margin: "1rem",
-          marginLeft: "1rem",
+          margin: "5px",
+          padding: "5px",
         }}
       >
         <>
@@ -35,6 +39,15 @@ function Note(props) {
           <div style={{ marginLeft: "3px" }}>
             <DeleteNote id={props.id} deleteNote={props.deleteNote} />
           </div>
+          {props.text.length > 200 && (
+            <NoteCloseup
+              id={props.id}
+              title={props.title}
+              text={props.text}
+              updateNote={props.updateNote}
+              deleteNote={props.deleteNote}
+            />
+          )}
         </>
         <div
           style={{

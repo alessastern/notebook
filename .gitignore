@@ -25,3 +25,8 @@ yarn-error.log*
 backend/venv
 backend/notebook/db.sqlite3
 .vscode
+
+venv
+/venv
+
+backend/notebook/media

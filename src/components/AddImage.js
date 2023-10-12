@@ -1,48 +1,50 @@
 import { useState } from "react";
-import "./styles.css";
 
-function AddNote(props) {
+function AddImage(props) {
   const [show, setShow] = useState(false);
 
   function Modal(props) {
-    const [title, setTitle] = useState("");
-    const [text, setText] = useState("");
+    const [image, setImage] = useState(null);
+    const [description, setDescription] = useState("");
+
     return (
       <div className="modal-background">
         <div className="modalbody">
           <div className="title">
-            <h2>Add a note</h2>
+            <h2>Add an image</h2>
           </div>
           <div className="">
             <form
               id="add"
               onSubmit={(e) => {
                 e.preventDefault();
-                setTitle("");
-                setText("");
-                props.addNote(title, text);
+                props.addImage(image, description ? description : "");
+                setImage(null);
+                setDescription("");
                 window.location.reload();
               }}
             >
               <div className="">
-                <input
-                  className="inputs"
-                  type="text"
-                  value={title}
-                  placeholder="Title"
-                  onChange={(e) => {
-                    setTitle(e.target.value);
-                  }}
-                ></input>
+                <label style={{ fontFamily: "Montserrat" }}>
+                  Image file
+                  <input
+                    name="image"
+                    className="inputs"
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => setImage(e.target.files[0])}
+                  ></input>
+                </label>
               </div>
-              <div>
+              <div className="">
                 <textarea
+                  name="description"
                   className="inputtext"
                   type="text"
-                  value={text}
+                  value={description}
                   placeholder="Description"
                   onChange={(e) => {
-                    setText(e.target.value);
+                    setDescription(e.target.value);
                   }}
                 ></textarea>
               </div>
@@ -64,15 +66,15 @@ function AddNote(props) {
   return (
     <div className="addButtonDiv">
       <button className="addButton" onClick={() => setShow(true)}>
-        Add a note
+        Add an image
       </button>
       {show ? (
         <>
-          <Modal addNote={props.addNote} />
+          <Modal addImage={props.addImage} />
         </>
       ) : null}
     </div>
   );
 }
 
-export default AddNote;
+export default AddImage;
