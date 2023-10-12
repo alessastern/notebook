@@ -212,7 +212,6 @@
   position: absolute;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid var(--contour);
   left: 50%;
   right: 50%;
   width: 50%;
