@@ -52,6 +52,7 @@
   margin: auto;
   text-align: center;
   width: 300px;
+  cursor: pointer;
 }
 
 .pagecontainer {
@@ -133,6 +134,7 @@
   margin: auto;
   text-align: center;
   width: 300px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1232px) {
@@ -207,16 +209,20 @@
 }
 
 .modalbody {
-  position: relative;
+  position: absolute;
   text-align: center;
   border-radius: 10px;
   border: 2px solid var(--contour);
+  left: 50%;
+  right: 50%;
   width: 50%;
-  top: 15%;
+  transform: translate(-50%, -50%);
+  top: 50%;
   margin: auto;
   display: block;
   background-color: var(--light);
   padding: 2px;
+  z-index: 1;
 }
 
 .modalfooter {
@@ -307,7 +313,7 @@
 
 .dropdown1 {
   margin-left: auto;
-  margin-right: 10rem;
+  margin-right: 5px;
   position: relative;
   display: inline-block;
 }

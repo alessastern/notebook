@@ -8,11 +8,11 @@ function NoteCloseup(props) {
   function Modal(props) {
     return (
       show && (
-        <div className="modal-background">
-          <div className="modalbody">
+        <div className="modal-background" onClick={() => setShow(false)}>
+          <div className="modalbody" onClick={(e) => e.stopPropagation()}>
             <div
               className="imgsmodal"
-              style={{ overflow: "auto", height: "600px" }}
+              style={{ overflow: "auto", height: "500px" }}
             >
               <div className="title">{props.title}</div>
               <div
@@ -27,9 +27,6 @@ function NoteCloseup(props) {
               </div>
             </div>
             <div className="modalfooter" style={{ marginTop: "10px" }}>
-              <button className="button" onClick={() => setShow(false)}>
-                Close
-              </button>
               <EditNote
                 id={props.id}
                 title={props.title}
@@ -37,6 +34,9 @@ function NoteCloseup(props) {
                 updateNote={props.updateNote}
               />
               <DeleteNote id={props.id} deleteNote={props.deleteNote} />
+              <button className="button" onClick={() => setShow(false)}>
+                Close
+              </button>
             </div>
           </div>
         </div>
