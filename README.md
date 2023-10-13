@@ -21,6 +21,11 @@ deleting an existing note: <img src="https://github.com/alessastern/notebook/ass
 </li>
 
 <li> IMAGES ('/images')- private route (only accessible if user is logged in), contains 5 images per page and a pagination button. Allows to open every image in a modal window, edit it's description, view fullsize image or delete it.  <img src="https://github.com/alessastern/notebook/assets/134006736/22625919-95cf-40db-b152-d2dc7b9b2486"/> <img src="https://github.com/alessastern/notebook/assets/134006736/bc406fe0-954e-4945-8e7b-cd5070aea8de"/>
+adding a new image: <img src="https://github.com/alessastern/notebook/assets/134006736/4a677b2c-0595-4d9e-890c-ce3d706aaac1"/>
+adding a description to the existing image: <img src="https://github.com/alessastern/notebook/assets/134006736/4bd12279-d33a-4718-95f6-7c11f4c9df6a"/>
+viewing fullsize image in a new tab: <img src="https://github.com/alessastern/notebook/assets/134006736/27232363-9b75-43a4-9a2c-18e11c249330"/>
+deleting an image: <img src="https://github.com/alessastern/notebook/assets/134006736/351c0ea2-8137-4a4f-bfa5-e424da29f51d"/>
+
  </li>
 
 <li>  REGISTRATION (/registration) - can be reached from dropdown menu from the header, from homepage, from login form page. Allows to register a new user using API, checks if passwords are matching and logs user in immediately after the signup is successful. <img src="https://github.com/alessastern/notebook/assets/134006736/fe983951-aba0-4340-a2ae-7487af26fe71"/> 
